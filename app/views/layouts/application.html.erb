@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KadLibrary</title>
+    <title>KAD Library</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,47 @@
   </head>
 
   <body>
+		<nav class="navbar navbar-toggleable-md navbar-light bg-primary">
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">KAD Library</a>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Start Here</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Resources by Type
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		        	<a class="dropdown-item" href="#">Adoption Agencies</a>
+		          <a class="dropdown-item" href="#">Books</a>
+		          <a class="dropdown-item" href="#">DNA Testing</a>
+		          <a class="dropdown-item" href="#">Events</a>
+		          <a class="dropdown-item" href="#">Film, TV, and Music</a>
+		          <a class="dropdown-item" href="#">KAD-Run Organizations</a>
+		          <a class="dropdown-item" href="#">Local Groups</a>
+		          <a class="dropdown-item" href="#">Multimedia</a>
+		          <a class="dropdown-item" href="#">Tours</a>
+        		</div>
+     			</li>
+
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Resources by Location
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="#">By State (U.S.)</a>
+		          <a class="dropdown-item" href="#">By Country (International)</a>
+        		</div>
+     			</li>
+		    </ul>
+		  </div>
+		</nav>
+
     <%= yield %>
   </body>
 </html>

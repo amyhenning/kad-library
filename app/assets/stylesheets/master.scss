@@ -1,0 +1,81 @@
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lato|Spinnaker');
+
+.clear {
+	clear: all;
+}
+
+.navbar {	
+	box-shadow: 0px 1px 1px #2a2a2a;
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar .navbar-brand {
+	color: #009FFF;
+	font-family: 'Spinnaker', sans-serif;
+}
+
+.navbar-light a.navbar-brand {
+	font-size: 30px;
+	color: #009FFF;
+}
+
+.navbar-light .navbar-brand:hover {
+	color: #009FFF;
+}
+
+.bg-primary {
+	background-color: #e0e3e5 !important;
+}
+
+.hero {
+	background: #009FFF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 400px;
+  width: 100%;
+  margin: 0;
+  box-shadow: 0px 1px 1px #2a2a2a;
+}
+
+.hero-text {
+	color: #fff;
+  padding: 2rem;
+}
+
+.hero-image {
+	width: 100%;
+	height: auto;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.btn-outline-secondary {
+  color: #fff;
+  background-image: none;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+  color: #000;
+  background-color: #e0e3e5;
+  border-color: #e0e3e5;
+}
+
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.about {
+	margin-top: 20px;
+}
+
+.about h2 {
+	color: #009FFF;
+	font-family: 'Spinnaker', sans-serif;
+}
