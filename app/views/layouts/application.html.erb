@@ -13,7 +13,7 @@
 		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
-		  <a class="navbar-brand" href="#">KAD Library</a>
+		  <%= link_to 'KAD Library', root_path, class: 'navbar-brand' %>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
@@ -32,8 +32,8 @@
 		          <a class="dropdown-item" href="#">Film, TV, and Music</a>
 		          <a class="dropdown-item" href="#">KAD-Run Organizations</a>
 		          <a class="dropdown-item" href="#">Local Groups</a>
-		          <a class="dropdown-item" href="#">Multimedia</a>
 		          <a class="dropdown-item" href="#">Tours</a>
+		          <a class="dropdown-item" href="#">Other</a>
         		</div>
      			</li>
 
@@ -46,6 +46,10 @@
 		          <a class="dropdown-item" href="#">By Country (International)</a>
         		</div>
      			</li>
+
+   			 <li class="nav-item">
+	        <%= link_to 'Submit a Resource', new_resource_path, class: 'nav-link' %>
+	      </li>
 		    </ul>
 		  </div>
 		</nav>

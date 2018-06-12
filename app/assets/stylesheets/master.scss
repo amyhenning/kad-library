@@ -37,7 +37,7 @@ body {
 	background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
-  margin: 0;
+  margin-top: 1px;
   box-shadow: 0px 1px 1px #2a2a2a;
   padding: 10px;
 }
@@ -83,18 +83,30 @@ body {
 }
 
 .about h2 {
-	color: #009FFF;
+	color: #ec2F4B;
 	font-family: 'Spinnaker', sans-serif;
 }
 
 .row {
-    max-width: 75rem;
-    margin-right: auto;
-    margin-left: auto;
-    /* display: flex; */
-    flex-flow: row wrap;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  /* display: flex; */
+  flex-flow: row wrap;
 }
 
 .align-middle {
   align-items: center;
+}
+
+.shadow-box {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 30px;
+}
+
+.shadow-box h2 {
+	margin: 0;
+	padding: 0;
+	color: #ec2F4B;
+	font-family: 'Spinnaker', sans-serif;
 }
