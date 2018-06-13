@@ -10,6 +10,14 @@
 		<br />
 		<%= f.text_area :description, size: "50x5" %>
 		<br />
+		<%= label_tag(:website, "Website:") %>
+		<br />
+		<%= f.text_field :website, size: "50x1" %>
+		<br />
+		<%= label_tag(:location, "Location (state if in the U.S., country if international):") %>
+		<br />
+		<%= f.text_field :location, size: "50x1" %>
+		<br />
 		<%= label_tag(:type, "Select the resource type below:") %>
 		<br />
 		<%= select_tag :type, options_for_select(Resource.types) %>
