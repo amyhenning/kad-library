@@ -18,9 +18,9 @@
 		<br />
 		<%= f.text_field :location, size: "50x1" %>
 		<br />
-		<%= label_tag(:type, "Select the resource type below:") %>
+		<%= label_tag(:resource_category, "Select the resource type below:") %>
 		<br />
-		<%= select_tag :type, options_for_select(Resource.types) %>
+		<%= f.select :resource_category, Resource.resource_categories.keys %>
 		<br /><br />
 		<%= f.submit "Submit" %>
 	<% end %>
