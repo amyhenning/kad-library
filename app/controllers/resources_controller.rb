@@ -8,7 +8,7 @@ class ResourcesController < ApplicationController
 
 	def create
 		@resource = Resource.create(resource_params.merge({ "user_id" => current_user.id}))
-		binding.pry
+#		binding.pry
 		redirect_to resource_path(@resource)
 	end
 
