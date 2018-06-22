@@ -5,6 +5,15 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
+a {
+	color: #009FFF;
+}
+
+a:hover {
+	color: #009FFF;
+	text-decoration: none;
+}
+
 .clear {
 	clear: all;
 }
@@ -63,9 +72,6 @@ body {
   border-color: #fff;
 }
 
-.btn {
-	border-radius: 0;
-}
 
 .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
   color: #000;
