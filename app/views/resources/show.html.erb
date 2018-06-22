@@ -1,11 +1,28 @@
 <div class="shadow-box col-10 offset-1">
-	<%= @resource.name %>
+	<h2><%= @resource.name %></h2>
+	<span class="badge badge-default"><%= @resource.resource_category %></span>
+	<br />
+	<% if @resource.website.present? %>
+		<%= link_to 'Website', @resource.website %>
+	<% end %>
+	<br />
+	<% if @resource.location.present? %>
+		<b>Location:</b> <%= @resource.location %>
+		<br /><br />
+	<% end %>
+	<hr />
+	<p>
+		<b>Description:</b> <%= @resource.description %>
+	</p>
 
 	<br />
 
-	<% unless current_user.favorite_resources.exists?(id: @resource_id) %>
-		<%= link_to 'Bookmark this resource', favorite_resources_path(resource_id: @resource), method: :post %>
-	<% else %>
-		<%= link_to 'Remove from bookmarks', favorite_resource_path(@resource), method: :delete %>
-	<% end %>
+	<div class="float-right">
+		<% unless current_user.favorite_resources.exists?(id: @resource_id) %>
+			<%= link_to 'Bookmark', favorite_resources_path(resource_id: @resource), method: :post, class: 'btn btn-secondary' %>
+		<% else %>
+			<%= link_to 'Remove bookmark', favorite_resource_path(@resource), method: :delete, class: 'btn btn-secondary' %>
+		<% end %>
+	</div>
+	<br class="clear" />
 </div>
