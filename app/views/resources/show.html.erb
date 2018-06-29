@@ -18,10 +18,14 @@
 	<br />
 
 	<div class="float-right">
-		<% unless current_user.favorite_resources.exists?(id: @resource_id) %>
-			<%= link_to 'Bookmark', favorite_resources_path(resource_id: @resource), method: :post, class: 'btn btn-secondary' %>
+		<% if current_user %>
+			<% unless current_user.favorite_resources.exists?(id: @resource_id) %>
+				<%= link_to 'Bookmark', favorite_resources_path(resource_id: @resource), method: :post, class: 'btn btn-secondary' %>
+			<% else %>
+				<%= link_to 'Remove bookmark', favorite_resource_path(@resource), method: :delete, class: 'btn btn-secondary' %>
+			<% end %>
 		<% else %>
-			<%= link_to 'Remove bookmark', favorite_resource_path(@resource), method: :delete, class: 'btn btn-secondary' %>
+			<%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.
 		<% end %>
 	</div>
 	<br class="clear" />

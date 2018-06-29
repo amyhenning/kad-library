@@ -3,7 +3,7 @@ class FavoriteResourcesController < ApplicationController
 
 	def create
 		if Favorite.create(favorited: @resource, user: current_user)
-			redirect_to @resource, notice: 'Project has been favorited'
+			redirect_to @resource, notice: 'Resource has been bookmarked'
 		else
 			redirect_to @resource, alert: 'Something went wrong. :('
 		end
@@ -11,7 +11,7 @@ class FavoriteResourcesController < ApplicationController
 
 	def destroy
 		Favorite.where(favorited_id: @project.id, user_id: current_user.id).first.destroy
-		redirect_to @resource, notice: 'Resource removed from favorites'
+		redirect_to @resource, notice: 'Bookmark successfully removed'
 	end
 
 	private
