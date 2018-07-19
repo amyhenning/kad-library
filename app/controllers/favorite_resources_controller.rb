@@ -10,7 +10,7 @@ class FavoriteResourcesController < ApplicationController
 	end
 
 	def destroy
-		Favorite.where(favorited_id: @project.id, user_id: current_user.id).first.destroy
+		Favorite.where(favorited_id: @resource.id, user_id: current_user.id).first.destroy
 		redirect_to @resource, notice: 'Bookmark successfully removed'
 	end
 
