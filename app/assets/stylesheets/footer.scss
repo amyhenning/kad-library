@@ -16,13 +16,17 @@ body {
 	position: relative;
 	width: 100%;
 	min-height: 100px;
-	background-color: #014670;
-	color: #fff;
+	background-color: #fff;
+	color: #292b2c;
 	font-family: 'Lato', sans-serif;
 	padding: 10px 0px;
 	margin-top: 30px;
+	font-size: 14px;
+	box-shadow: 1px 1px 1px 1px #2a2a2a;
+
 }
 
 #footer a {
 	color: #009FFF;
+	text-decoration: none;
 }
