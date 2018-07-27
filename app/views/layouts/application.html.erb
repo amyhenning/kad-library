@@ -37,24 +37,12 @@
 			          <a class="dropdown-item" href="/resources?resource_category=8">Other</a>
 	        		</div>
 	     			</li>
-
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Resources by Location
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="#">By State (U.S.)</a>
-			          <a class="dropdown-item" href="#">By Country (International)</a>
-	        		</div>
-	     			</li>
-
+					 <li class="nav-item">
+					 	<a href="/resources" class="nav-link">See All Resources</a>
+		       </li>
 	   			 <li class="nav-item">
 		        <%= link_to 'Submit a Resource', new_resource_path, class: 'nav-link' %>
 		       </li>
-		       <li class="nav-item">
-		       	<%= link_to 'About', about_path, class: 'nav-link' %>
-		       </li>
-
 			    </ul>
 
 			    <ul class="navbar-nav">
@@ -83,11 +71,29 @@
 	    
 	    <%= yield %>
 	  </div>
+
 	 <div id="footer">
 	 	<div class="container">
-	 		<b>Footer Here</b>
-	 		<br />
-	 		<%= link_to 'Test link', '#' %>
+	 		<div class="row">
+	 			<div class="col-12 col-sm-4">
+			 		<b>Info</b>
+			 		<br />
+			 		<%= link_to 'About', about_path %>
+			 	</div>
+			 	<div class="col-12 col-sm-4">
+			 		<b>Contribute</b>
+			 		<br />
+			 		<%= link_to 'Submit a Resource', new_resource_path %>
+			 	</div>
+			 	<div class="col-12 col-sm-4">
+			 		<b>Connect</b>
+			 		<br />
+			 		<%= link_to 'Contact', '#' %>
+			 		<br />
+			 		<%= link_to 'Sign Up', new_user_registration_path %>
+			 	</div>
+			 </div>
+			</div>
 	 	</div>
 	 </div>
   </body>
