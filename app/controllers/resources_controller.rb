@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
 	 before_action :authenticate_user!, only: [:new, :create]
 
 	def index
+		@resources = Resource.where(resource_category: params[:resource_category])
 	end
 
 	def new

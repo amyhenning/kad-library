@@ -1,13 +1,34 @@
-<div class="container hero">
-  <div class="row align-middle col-10 offset-1">
-    <div class="hero-text col-12 col-md-7 my-auto">
-    	<h3>Welcome to the Korean Adoptee Library</h3>
-  	<p>A comprehensive resource library for KADs.
-  		<br /><br />
-  	<a href="#about" class="btn btn-outline-secondary">Learn more</a>
+<% @resources.each do |resource| %>
+
+  <div class="shadow-box col-10 offset-1">
+    <h2><%= resource.name %></h2>
+    <span class="badge badge-default"><%= resource.resource_category %></span>
+    <br />
+    <% if resource.website.present? %>
+      <%= link_to 'Website', resource.website %>
+    <% end %>
+    <br />
+    <% if resource.location.present? %>
+      <b>Location:</b> <%= resource.location %>
+      <br />
+    <% end %>
+    <hr />
+    <b>Description:</b> <%= resource.description %>
+
+    <br />
+
+    <div class="float-right">
+      <% if current_user %>
+        <% if current_user.favorite_resources.exists?(id: resource.id) %>
+          <%= link_to 'Remove bookmark', favorite_resource_path(@resource), method: :delete %>
+        <% else %>
+          <%= link_to 'Bookmark', favorite_resources_path(resource_id: resource), method: :post %>
+        <% end %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.
+      <% end %>
     </div>
-    <div class="col-12 col-md-5 my-auto">
-      <%= image_tag 'flag.png', class: 'hero-image' %>
-    </div>
+    <br class="clear" />
   </div>
-</div>
+
+<% end %>
