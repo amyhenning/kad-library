@@ -10,7 +10,7 @@
 
   <body>
   	<div id="flex-content-container">
-			<nav class="navbar navbar-toggleable-md navbar-light bg-primary">
+			<nav class="navbar navbar-toggleable-md navbar-light bg-primary sticky-top">
 			  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -26,15 +26,15 @@
 			          Resources by Type
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			        	<a class="dropdown-item" href="/resources?resource_category=0">Adoption Agencies</a>
-			          <a class="dropdown-item" href="/resources?resource_category=1">Books</a>
-			          <a class="dropdown-item" href="/resources?resource_category=2">DNA Testing</a>
-			          <a class="dropdown-item" href="/resources?resource_category=3">Events</a>
-			          <a class="dropdown-item" href="/resources?resource_category=4">Film, TV, and Music</a>
-			          <a class="dropdown-item" href="/resources?resource_category=5">KAD-Run Organizations</a>
-			          <a class="dropdown-item" href="/resources?resource_category=6">Local Groups</a>
-			          <a class="dropdown-item" href="/resources?resource_category=7">Tours</a>
-			          <a class="dropdown-item" href="/resources?resource_category=8">Other</a>
+			        	<%= link_to 'Adoption Agencies', resources_path(params: {:resource_category => 0}), class: 'dropdown-item' %>
+			        	<%= link_to 'Books', resources_path(params: {:resource_category => 1}), class: 'dropdown-item' %>
+			        	<%= link_to 'DNA Testing', resources_path(params: {:resource_category => 2}), class: 'dropdown-item' %>
+			        	<%= link_to 'Events', resources_path(params: {:resource_category => 3}), class: 'dropdown-item' %>
+			          <%= link_to 'Film, TV, and Music', resources_path(params: {:resource_category => 4}), class: 'dropdown-item' %>
+			          <%= link_to 'KAD-Run Organizations', resources_path(params: {:resource_category => 5}), class: 'dropdown-item' %>
+			          <%= link_to 'Local Groups', resources_path(params: {:resource_category => 6}), class: 'dropdown-item' %>
+			          <%= link_to 'Tours', resources_path(params: {:resource_category => 7}), class: 'dropdown-item' %>
+			          <%= link_to 'Other', resources_path(params: {:resource_category => 8}), class: 'dropdown-item' %>
 	        		</div>
 	     			</li>
 					 <li class="nav-item">
