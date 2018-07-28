@@ -1,11 +1,18 @@
-<div class="container page-hero">
+<div class="container hero">
   <div class="row align-middle col-10 offset-1">
-    <div class="hero-text my-auto">
-      <h3><%= @resource_category %></h3>
+    <div class="hero-text col-12 my-auto">
+      <h2>
+        <% if @resource_category != nil %>
+          <%= @resource_category %>
+        <% else %>
+          All Resources
+        <% end %>
+      </h2>
+    </div>
+    <div class="col-12 col-md-5 my-auto">
     </div>
   </div>
 </div>
-
 <% @resources.each do |resource| %>
 
   <div class="shadow-box col-10 offset-1">

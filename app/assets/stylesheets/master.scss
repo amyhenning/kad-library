@@ -51,19 +51,12 @@ a:hover {
   padding: 10px;
 }
 
-.page-hero {
-	background: #009FFF;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  width: 100%;
-  margin-top: 0px;
-  box-shadow: 0px 1px 1px #2a2a2a;
-  padding: 10px;
-  max-height: 200px;
-}
-
 .hero-text {
 	color: #fff;
+}
+
+.hero-text h2 {
+	margin: 0px;
 }
 
 .hero-image {
