@@ -2,7 +2,11 @@ class ResourcesController < ApplicationController
 	 before_action :authenticate_user!, only: [:new, :create]
 
 	def index
-		@resources = Resource.where(resource_category: params[:resource_category])
+		if params[:resource_category]
+			@resources = Resource.where(resource_category: params[:resource_category])
+		else
+			@resources = Resource.all.order(:resource_category)
+		end
 	end
 
 	def new

@@ -38,8 +38,8 @@
 	        		</div>
 	     			</li>
 					 <li class="nav-item">
-					 	<a href="/resources" class="nav-link">See All Resources</a>
-		       </li>
+						<%= link_to 'See All Resources', resources_path, class: 'nav-link' %>		      
+					 </li>
 	   			 <li class="nav-item">
 		        <%= link_to 'Submit a Resource', new_resource_path, class: 'nav-link' %>
 		       </li>
