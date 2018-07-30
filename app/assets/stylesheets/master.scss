@@ -22,6 +22,7 @@ a:hover {
 
 .navbar {	
 	font-family: 'Lato', sans-serif;
+	height: 100px;
 }
 
 .navbar .navbar-brand {
@@ -30,7 +31,7 @@ a:hover {
 }
 
 .navbar-light a.navbar-brand {
-	font-size: 30px;
+	font-size: 40px;
 	color: #009FFF;
 }
 
@@ -136,4 +137,9 @@ a:hover {
 
 .card {
 	width: 300px;
+}
+
+.fa-external-link {
+	font-size: 10px;
+	vertical-align: super;
 }

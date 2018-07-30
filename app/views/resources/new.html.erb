@@ -1,12 +1,7 @@
-<div class="container hero">
-  <div class="row col-10 offset-1 page-row align-middle">
-    <div class="hero-text my-auto">
-      <h2>Submit a KAD Resource</h2> 
-    </div>
-  </div>
-</div>
 
 <div class="shadow-box col-10 offset-1">
+	<h2>Submit a KAD Resource</h2>
+	<br />
 	<%= form_for @resource, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
 		<%= label_tag(:name, "Resource name or title:") %>
 		<%= f.text_field :name, class: 'form-control' %>
