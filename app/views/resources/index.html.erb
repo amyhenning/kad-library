@@ -16,6 +16,11 @@
   <% @resources.each do |resource| %>
     <div class="resource col-12 col-sm-4">
       <div class="shadow-box">
+        <h2><%= resource.name %></h2>
+        <span class="badge badge-default"><%= resource.resource_category %></span>
+        <br />
+        <%= resource.description %>
+        <br /><br />
         <p class="float-right">            
           <%= link_to resource_path(resource) do %>
             <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -32,14 +37,9 @@
                <% end %>
             <% end %>
           <% else %>
-             &nbsp; <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.
+             &nbsp; <small><%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.</small>
           <% end %>
         </p>
-        <h2><%= resource.name %></h2>
-        <span class="badge badge-default"><%= resource.resource_category %></span>
-        <br />
-        <%= resource.description %>
-        <p class="float-right"></p>
         <br class="clear" />
       </div>
       <br class="clear" />
