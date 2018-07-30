@@ -7,7 +7,6 @@
 </div>
 
 <div class="shadow-box col-10 offset-1">
-	<br />
 	<%= form_for @resource, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
 		<%= label_tag(:name, "Resource name or title:") %>
 		<%= f.text_field :name, class: 'form-control' %>
@@ -20,13 +19,10 @@
 		<br />
 		<%= label_tag(:location, "Location (state if in the U.S., country if international):") %>
 		<%= f.text_field :location, class: 'form-control' %>
-
 		<br />
 		<%= label_tag(:resource_category, "Select the resource type below:") %><br />
 		<%= f.select :resource_category, Resource.resource_categories.keys, {}, class: 'form-control' %>
-		
 		<br /><br />
-
 		<%= f.submit "Submit", class: 'btn btn-secondary' %>
 	<% end %>
 </div>
