@@ -1,19 +1,16 @@
 <div class="shadow-box col-10 offset-1">
 		<h2><%= @resource.name %></h2>
 		<span class="badge badge-default"><%= @resource.resource_category %></span>
-		<br />
-		<% if @resource.website.present? %>
-			<%= link_to 'Website', @resource.website %>
-		<% end %>
-		<br />
-		<% if @resource.location.present? %>
-			<b>Location:</b> <%= @resource.location %>
-			<br />
-		<% end %>
-		<hr />
-			<b>Description:</b> <%= @resource.description %>
+    <% if @resource.website.present? %>
+      &#8226; <%= link_to 'Website', @resource.website %>
+    <% end %>
 
-		<br />
+    <% if @resource.location.present? %>
+      &#8226; <b>Location:</b> <%= @resource.location %>
+    <% end %>
+    <hr />
+    <%= @resource.description %>
+    <hr />
 
 		<div class="float-right">
 			<% if current_user %>

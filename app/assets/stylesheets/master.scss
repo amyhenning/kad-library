@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-	color: #009FFF;
+	color: #006aa0;
 	text-decoration: none;
 }
 
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .navbar-light .navbar-brand:hover {
-	color: #009FFF;
+	color: #006aa0;
 }
 
 .bg-primary {
@@ -81,8 +81,8 @@ a:hover {
 
 .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
   color: #000;
-  background-color: #e0e3e5;
-  border-color: #e0e3e5;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .my-auto {
@@ -100,7 +100,6 @@ a:hover {
 }
 
 .row {
-  max-width: 75rem;
   margin-right: auto;
   margin-left: auto;
   /* display: flex; */
@@ -118,9 +117,22 @@ a:hover {
   border-radius: 0.25rem;
 }
 
+.mx-3 {
+	margin-left: $spacer;
+	margin-right: $spacer;
+}
+
 .shadow-box h2 {
 	margin: 0;
 	padding: 0;
 	color: #ec2F4B;
 	font-family: 'Spinnaker', sans-serif;
+}
+
+.resource {
+
+}
+
+.card {
+	width: 300px;
 }

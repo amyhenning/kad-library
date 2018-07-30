@@ -11,37 +11,38 @@
     </div>
   </div>
 </div>
-<% @resources.each do |resource| %>
 
-  <div class="shadow-box col-10 offset-1">
-    <h2><%= resource.name %></h2>
-    <span class="badge badge-default"><%= resource.resource_category %></span>
-    <br />
-    <% if resource.website.present? %>
-      <%= link_to 'Website', resource.website %>
+<br class="clear" />
+
+
+  <div class="row col-10 offset-1">
+    <% @resources.each do |resource| %>
+      <div class="resource col-12 col-sm-4">
+        <div class="shadow-box">
+          <h2><%= resource.name %></h2>
+          <span class="badge badge-default"><%= resource.resource_category %></span>
+          <br />
+          <%= resource.description %>
+          <p class="float-right"></p>
+          <br class="clear" />
+          <hr />
+
+          <div class="float-right">
+            <%= link_to 'Learn more', resource_path(resource) %>
+            <% if current_user %>
+              <% if current_user.favorite_resources.exists?(id: resource.id) %>
+                 &#8226; <%= link_to 'Remove bookmark', favorite_resource_path(resource), method: :delete %>
+              <% else %>
+                 &#8226; <%= link_to 'Bookmark', favorite_resources_path(resource_id: resource), method: :post %>
+              <% end %>
+            <% else %>
+               &#8226; <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.
+            <% end %>
+          </div>
+          <br class="clear" />
+        </div>
+        <br class="clear" />
+      </div>
+
     <% end %>
-    <br />
-    <% if resource.location.present? %>
-      <b>Location:</b> <%= resource.location %>
-      <br />
-    <% end %>
-    <hr />
-    <b>Description:</b> <%= resource.description %>
-
-    <br />
-
-    <div class="float-right">
-      <% if current_user %>
-        <% if current_user.favorite_resources.exists?(id: resource.id) %>
-          <%= link_to 'Remove bookmark', favorite_resource_path(resource), method: :delete %>
-        <% else %>
-          <%= link_to 'Bookmark', favorite_resources_path(resource_id: resource), method: :post %>
-        <% end %>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.
-      <% end %>
-    </div>
-    <br class="clear" />
   </div>
-
-<% end %>
