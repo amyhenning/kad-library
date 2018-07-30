@@ -61,3 +61,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'devise'
+gem 'font-awesome-rails'
