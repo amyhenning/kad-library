@@ -1,0 +1,22 @@
+<div class="shadow-box col-10 offset-1">
+	<h2>Edit <%= @resource.name %></h2>
+	<br />
+	<%= form_for @resource do |f| %>
+		<%= label_tag(:name, "Resource name or title:") %>
+		<%= f.text_field :name, class: 'form-control' %>
+		<br />
+		<%= label_tag(:description, "Describe the resource:") %>
+		<%= f.text_area :description, class: 'form-control' %>
+		<br />
+		<%= label_tag(:website, "Website:") %>
+		<%= f.text_field :website, class: 'form-control' %>
+		<br />
+		<%= label_tag(:location, "Location (state if in the U.S., country if international):") %>
+		<%= f.text_field :location, class: 'form-control' %>
+		<br />
+		<%= label_tag(:resource_category, "Select the resource type below:") %><br />
+		<%= f.select :resource_category, Resource.resource_categories.keys, {}, class: 'form-control' %>
+		<br /><br />
+		<%= f.submit "Submit", class: 'btn btn-secondary' %>
+	<% end %>
+</div>

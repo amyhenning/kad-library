@@ -28,12 +28,12 @@
 
           <% if current_user %>
             <% if current_user.favorite_resources.exists?(id: resource.id) %>
-               &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, data: {confirm: 'Are you sure you want to delete this bookmark?'} do %>
-               <i class="fa fa-trash"></i>
+               &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, data: {confirm: 'Are you sure you want to remove this bookmark?'} do %>
+               <i class="fa fa-bookmark"></i>
             <% end %>
             <% else %>
                &nbsp; <%= link_to favorite_resources_path(resource_id: resource), method: :post do %>
-               <i class="fa fa-bookmark"></i>
+               <i class="fa fa-bookmark-o"></i>
                <% end %>
             <% end %>
           <% else %>

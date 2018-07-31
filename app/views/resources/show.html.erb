@@ -18,15 +18,19 @@
 	  <% if current_user %>
       <% if current_user.favorite_resources.exists?(id: @resource.id) %>
          &nbsp; <%= link_to favorite_resource_path(@resource), method: :delete, data: {confirm: 'Are you sure you want to delete this bookmark?'} do %>
-         <i class="fa fa-trash"></i>
+         <i class="fa fa-bookmark fa-2x"></i>
       <% end %>
       <% else %>
          &nbsp; <%= link_to favorite_resources_path(resource_id: @resource), method: :post do %>
-         <i class="fa fa-bookmark"></i>
+         <i class="fa fa-bookmark-o fa-2x"></i>
          <% end %>
       <% end %>
     <% else %>
        &nbsp; <small><%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.</small>
+    <% end %>
+
+    <%= link_to edit_resource_path(@resource) do %>
+      &nbsp; <i class="fa fa-pencil-square-o fa-2x"></i>
     <% end %>
 	</p>
 	<br class="clear" />
