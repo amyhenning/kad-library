@@ -16,8 +16,11 @@ class ResourcesController < ApplicationController
 
 	def create
 		@resource = Resource.create(resource_params.merge({ "user_id" => current_user.id}))
-#		binding.pry
-		redirect_to resource_path(@resource)
+		if @resource.valid?
+			redirect_to resource_path(@resource)
+		else
+			render :new, status: :unprocessable_entity
+		end
 	end
 
 	def show
@@ -38,7 +41,11 @@ class ResourcesController < ApplicationController
 		end
 
 		@resource.update_attributes(resource_params)
-		redirect_to resource_path(@resource), notice: 'Resource updated'
+		if @resource.valid?
+			redirect_to resource_path(@resource), notice: 'Resource updated'
+		else
+			render :edit, status: :unprocessable_entity
+		end
 	end
 
 	def destroy
