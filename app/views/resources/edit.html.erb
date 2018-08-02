@@ -1,4 +1,16 @@
 <div class="shadow-box col-10 offset-1">
+	<% if @resource.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@resource.errors.count, "error") %>
+			prohibited this resource from being updated:</h2>
+			<ul>
+				<% @resource.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<h2>Edit <%= @resource.name %></h2>
 	<br />
 	<%= form_for @resource do |f| %>
