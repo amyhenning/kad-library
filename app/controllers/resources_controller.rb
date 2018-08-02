@@ -34,6 +34,12 @@ class ResourcesController < ApplicationController
 		redirect_to resource_path(@resource), notice: 'Resource updated'
 	end
 
+	def destroy
+		@resource = Resource.find(params[:id])
+		@resource.destroy
+		redirect_to resources_path, notice: 'Resource deleted'
+	end
+
 	private
 
 	def resource_params
