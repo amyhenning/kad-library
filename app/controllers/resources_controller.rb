@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-	 before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@resource_category = params[:resource_category]
@@ -36,13 +36,16 @@ class ResourcesController < ApplicationController
 		if @resource.user != current_user
 			return render plain: 'Not allowed', status: :forbidden
 		end
-		
+
 		@resource.update_attributes(resource_params)
 		redirect_to resource_path(@resource), notice: 'Resource updated'
 	end
 
 	def destroy
 		@resource = Resource.find(params[:id])
+		if @resource.user != current_user
+			return render plain: 'Not allowed', status: :forbidden
+		end
 		@resource.destroy
 		redirect_to resources_path, notice: 'Resource deleted'
 	end
