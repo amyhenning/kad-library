@@ -152,3 +152,25 @@ a:hover {
 	background-color: #ec2F4B;
 	display: table;
 }
+
+.pagination {
+	justify-content: center;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #009FFF;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #009FFF;
+    border-color: #009FFF;
+}

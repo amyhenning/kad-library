@@ -3,7 +3,7 @@
     <div class="hero-text my-auto">
       <h2>
         <% if @resource_category != nil %>
-          <%= @resource_category %>
+          <%= @resource_category.pluralize %>
         <% else %>
           All Resources
         <% end %>
@@ -46,4 +46,10 @@
     </div>
 
   <% end %>
+</div>
+
+<div class="clear"></div>
+
+<div class="pagination-wrapper">
+  <%= will_paginate @resources, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>

@@ -2,11 +2,16 @@ class ResourcesController < ApplicationController
 	 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@resource_category = params[:resource_category]
-		if params[:resource_category]
-			@resources = Resource.where(resource_category: params[:resource_category])
+		if params[:resource_category] == nil
+			@resource_category = nil
 		else
-			@resources = Resource.all.order(:resource_category)
+			@resource_category = Resource.resource_categories.invert[params[:resource_category].to_i]
+		end
+		# binding.pry
+		if params[:resource_category]
+			@resources = Resource.where(resource_category: params[:resource_category]).paginate(page: params[:page], per_page: 9)
+		else
+			@resources = Resource.all.order(:resource_category).paginate(page: params[:page], per_page: 9)
 		end
 	end
 
