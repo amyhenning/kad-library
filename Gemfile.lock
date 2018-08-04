@@ -1,6 +1,6 @@
 GEM
-  remote: https://rubygems.org/
-  remote: https://rails-assets.org/
+  remote: http://rubygems.org/
+  remote: http://rails-assets.org/
   specs:
     actioncable (5.0.7)
       actionpack (= 5.0.7)
@@ -216,4 +216,4 @@ DEPENDENCIES
   will_paginate-bootstrap4
 
 BUNDLED WITH
-   1.13.6
+   1.16.2
