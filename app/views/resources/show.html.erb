@@ -56,3 +56,14 @@
     <%= f.submit 'Post', class: 'btn btn-primary' %>
   <% end %>
 </div>
+
+<div class="shadow-box col-10 offset-1">
+  <h3>Reviews</h3>
+  <% @resource.reviews.each do |review| %>
+  <%= review.user_id %>
+  <br />
+  <b>Rating:</b> <%= review.rating %>
+  <br />
+  <b>Comment:</b> <%= review.comment %>
+  <% end %>
+</div>
