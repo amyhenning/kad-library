@@ -2,8 +2,10 @@
   <div class="row col-10 offset-1 page-row align-middle">
     <div class="hero-text my-auto">
       <h2>
-        <% if @resource_category != nil %>
+        <% if @resource_category != nil && @resource_category != 'Film, TV, and Music' && @resource_category != 'Other' %>
           <%= @resource_category.pluralize %>
+        <% elsif @resource_category == 'Film, TV, and Music' || @resource_category == 'Other' %>
+          <%= @resource_category %>
         <% else %>
           All Resources
         <% end %>
