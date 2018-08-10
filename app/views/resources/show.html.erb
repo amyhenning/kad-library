@@ -42,3 +42,17 @@
 	</p>
 	<br class="clear" />
 </div>
+
+
+<div class="shadow-box col-10 offset-1">
+  <h4>Leave a Review</h4>
+  <%= form_for @review, url: resource_reviews_path(@resource), html: {class: "nifty_form"} do |f| %>
+    <%= label_tag(:comment, 'Comment') %>
+    <%= f.text_area :comment, class: 'form-control' %>
+    <br />
+    <%= label_tag(:rating, 'Rating') %>
+    <%= f.text_field :rating, class: 'form-control' %>
+    <br />
+    <%= f.submit 'Post', class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -4,6 +4,7 @@
 
 body {
 	font-family: 'Lato', sans-serif;
+	color: #636c72;
 	background-color: #edf5f9;
 }
 
@@ -86,6 +87,18 @@ a:hover {
   border-color: #fff;
 }
 
+.btn-primary {
+	color: #fff;
+	background-color: #009FFF;
+	border-color: #009FFF;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #006aa0;
+  border-color: #006aa0;
+}
+
 .my-auto {
 	margin-top: auto;
 	margin-bottom: auto;
@@ -132,10 +145,6 @@ a:hover {
 
 .resource {
 
-}
-
-.card {
-	width: 300px;
 }
 
 .fa-external-link {
