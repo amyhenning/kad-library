@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 	def create
 		@resource = Resource.find(params[:resource_id])
 		@resource.reviews.create(review_params.merge(user: current_user))
+		redirect_to resource_path(@resource)
 	end
 
 	private
