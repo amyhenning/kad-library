@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	get 'start_here', to: 'static_pages#start_here'
 	resources :favorite_resources, only: [:create, :destroy]
 	resources :resources do
-		resources :reviews, only: :create
+		resources :reviews, only: [:create, :destroy]
 	end
+	resources :users, only: :show
 end
