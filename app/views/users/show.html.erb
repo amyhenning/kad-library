@@ -31,8 +31,10 @@
     <br />
     <% if @favorites != nil %>
       <% @favorites.each do |favorite| %>
-        <% resource = Resource.find(favorite.favorited_id) %>
-        <%= link_to resource.name, resource_path(resource) %>
+        <% resource = Resource.find_by_id(favorite.favorited_id) %>
+        <% if resource %>
+          <%= link_to resource.name, resource_path(resource) %>
+        <% end %>
         <br />
       <% end %>
     <% else %>

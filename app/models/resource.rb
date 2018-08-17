@@ -5,5 +5,9 @@ class Resource < ApplicationRecord
 	has_many :reviews, dependent: :destroy
 	validates :name, presence: true, length: { minimum: 3, too_short: "must be longer than %{count} characters." }
 	validates :description, presence: true
+	after_destroy :clean_up_favorites
 
+	def clean_up_favorites
+		# find the favorites that are reasources with the specific id, destroy all
+	end
 end
