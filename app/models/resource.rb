@@ -8,6 +8,7 @@ class Resource < ApplicationRecord
 	after_destroy :clean_up_favorites
 
 	def clean_up_favorites
-		# find the favorites that are reasources with the specific id, destroy all
+    favorites = Favorite.where(favorited_type: "Resource", favorited_id: id)
+    favorites.destroy_all
 	end
 end
