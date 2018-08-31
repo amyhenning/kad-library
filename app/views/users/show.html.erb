@@ -16,7 +16,7 @@
     <b>Email:</b> <%= @user.email %>
     <br />
     <b>Contributions:</b> 
-      <% if @resources.count != 0 %>
+      <% if @resources.count > 0 %>
         <%= @resources.count %>
       <% else %>
         None yet!
@@ -29,12 +29,10 @@
   <div class="col-12 col-sm-7 shadow-box">
     <h2>My Favorites</h2>
     <br />
-    <% if @favorites != nil %>
+    <% if @favorites.count > 0 %>
       <% @favorites.each do |favorite| %>
         <% resource = Resource.find_by_id(favorite.favorited_id) %>
-        <% if resource %>
-          <%= link_to resource.name, resource_path(resource) %>
-        <% end %>
+        <%= link_to resource.name, resource_path(resource) %>
         <br />
       <% end %>
     <% else %>
