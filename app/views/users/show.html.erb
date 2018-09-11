@@ -31,11 +31,12 @@
     <br />
     <% if @favorites != nil %>
       <% @favorites.each do |favorite| %>
+      <!-- Line 35 is a database query - best practice is to not have these in views (why?). Move the logic to the controller -->
         <% resource = Resource.find_by_id(favorite.favorited_id) %>
         <% if resource %>
           <%= link_to resource.name, resource_path(resource) %>
+          <br />
         <% end %>
-        <br />
       <% end %>
     <% else %>
       None yet!
