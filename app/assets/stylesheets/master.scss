@@ -194,8 +194,9 @@ blockquote {
 	padding: 30px;
 	margin-left: 2px;
 	margin-right: 2px;
+	margin-top: 5px;
 	background: #fff;
-	border-radius: 0.25rem;
+	border-top: 1px solid #d2d7db;
 }
 
 .fa-star {
@@ -204,4 +205,8 @@ blockquote {
 
 .fa-star-o {
 	color: #ec2F4B;
+}
+
+hr {
+	background-color: #d2d7db;
 }
