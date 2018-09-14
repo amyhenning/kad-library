@@ -31,6 +31,8 @@ class ResourcesController < ApplicationController
 	def show
 		@resource = Resource.find(params[:id])
 		@review = Review.new
+		@user = User.find_by_id(@resource.user_id)
+		@review = Review.new
 	end
 
 	def edit

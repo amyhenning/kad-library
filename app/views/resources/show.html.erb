@@ -4,7 +4,6 @@
       <%= link_to edit_resource_path(@resource) do %>
         &nbsp; <i class="fa fa-pencil-square-o fa-large"></i>
       <% end %>
-
       <%= link_to resource_path(@resource), method: :delete, data: {confirm: 'Are you sure you want to delete this resource?'} do %>
         <i class="fa fa-trash fa-large"></i>
       <% end %>
@@ -14,16 +13,20 @@
 	<span class="badge badge-default"><%= @resource.resource_category %></span>
 	<br />
   <% if @resource.website.present? %>
-    <%= link_to 'Website', @resource.website, target: :_blank %>
-    <i class="fa fa-external-link" aria-hidden="true"></i>
+    <%= link_to 'Website', @resource.website, target: :_blank %></i>
     <br />
 	 	<% end %>
   <% if @resource.location.present? %>
   	<b>Location:</b> <%= @resource.location %>
   <% end %>
-
   <hr />
   <%= @resource.description %>
+  <% if @user %>
+    <br />
+    <p class="float-right">
+        <small>Contributed by <%= @user.username %></small>
+    </p>
+  <% end %>
   <br /><br />
   <p class="float-right">
 	  <% if current_user %>
@@ -43,27 +46,65 @@
 	<br class="clear" />
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add a review</h4>
+      </div>
+      <%= form_for @review, url: resource_reviews_path(@resource), html: {class: "nifty_form"} do |f| %>
 
-<div class="shadow-box col-10 offset-1">
-  <h4>Leave a Review</h4>
-  <%= form_for @review, url: resource_reviews_path(@resource), html: {class: "nifty_form"} do |f| %>
-    <%= label_tag(:comment, 'Comment') %>
-    <%= f.text_area :comment, class: 'form-control' %>
-    <br />
-    <%= label_tag(:rating, 'Rating') %>
-    <%= f.text_field :rating, class: 'form-control' %>
-    <br />
-    <%= f.submit 'Post', class: 'btn btn-primary' %>
-  <% end %>
+        <div class="modal-body">
+          <%= label_tag(:comment, 'Comment') %>
+          <%= f.text_area :comment, class: 'form-control' %>
+          <br />
+          <%= label_tag(:rating, 'Rating') %>
+          <%= f.select :rating, (1..5), { :size => 5 }, class: 'form-control' %>
+          <br />
+        </div>
+        <div class="modal-footer">
+          <%= f.submit 'Post', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div class="shadow-box col-10 offset-1">
+<div class="reviews-shadow-box col-10 offset-1">
+  <% if current_user %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
+      Add a review
+    </button>
+  <% end %>
   <h3>Reviews</h3>
-  <% @resource.reviews.each do |review| %>
-  <%= review.user_id %>
   <br />
-  <b>Rating:</b> <%= review.rating %>
-  <br />
-  <b>Comment:</b> <%= review.comment %>
+  <% if @resource.reviews.present? %>
+    <div class="row">
+      <% @resource.reviews.each do |review| %>
+        <div class="reviews col-12 col-sm-6">
+          <blockquote>
+            <b>Rating:</b> 
+              <% review.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <i class="fa fa-star-o"></i>
+              <% end %>
+            <br />
+            <b>Comment:</b> <%= review.comment %>
+            <br /><br />
+            <p class="float-right">- <%= review.user.username %></p>
+            <br />
+          </blockquote>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    None yet!
   <% end %>
 </div>

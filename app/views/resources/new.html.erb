@@ -30,6 +30,6 @@
 		<%= label_tag(:resource_category, "Select the resource type below:") %><br />
 		<%= f.select :resource_category, Resource.resource_categories.keys, {}, class: 'form-control' %>
 		<br /><br />
-		<%= f.submit "Submit", class: 'btn btn-secondary' %>
+		<%= f.submit "Submit", class: 'btn btn-primary' %>
 	<% end %>
 </div>

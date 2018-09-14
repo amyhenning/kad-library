@@ -18,7 +18,7 @@
   <% @resources.each do |resource| %>
     <div class="resource col-12 col-sm-4">
       <div class="shadow-box">
-        <h2><%= resource.name %></h2>
+        <h2><%= link_to resource.name, resource_path(resource) %></h2>
         <span class="badge badge-default"><%= resource.resource_category %></span>
         <br />
         <%= resource.description %>
