@@ -35,7 +35,7 @@ Each category page shows resources only from that category
 Individual resource pages include a link to the website, location if applicable, a description, and reviews
 
 ![newresource](https://github.com/amyhenning/kad-library/blob/master/app/assets/images/newresource.png?raw=true)
-Users can submit resources, making this a community-driven resource
+Users can submit resources, making this a community-driven application
 
 ![userdashboard](https://github.com/amyhenning/kad-library/blob/master/app/assets/images/userprofile.png?raw=true)
 Users can see their personal statistics and lists of favorite resources on their profile page
