@@ -78,36 +78,28 @@
 
 	 <div id="footer">
 	 	<div class="container">
-	 		<div class="row col-8 offset-2">
-	 			<div class="col-12 col-sm-3">
+	 		<div class="row col-10 offset-1">
+	 			<div class="col-12 col-sm-6 text-center">
 			 		<b>Info</b>
 			 		<br />
 			 		<%= link_to 'About', about_path %>
 			 		<br />
-			 		<%= link_to 'FAQ', '#' %>
+			 		<%= link_to 'FAQ', faq_path %>
+			 		<br />
+			 		<%= link_to 'Contact', contact_path %>
 			 	</div>
-			 	<div class="col-12 col-sm-3">
+			 	<div class="col-12 col-sm-6 text-center">
 			 		<b>Get Involved</b>
 			 		<br />
-			 		<%= link_to 'How to Contribute', '#' %>
+			 		<%= link_to 'How to Contribute', contribute_path %>
 			 		<br />
 			 		<%= link_to 'Submit a Resource', new_resource_path %>
-			 	</div>
-			 	<div class="col-12 col-sm-3">
-			 		<b>Connect</b>
-			 		<br />
-			 		<%= link_to 'Contact', '#' %>
 			 		<br />
 			 		<%= link_to 'Sign Up', new_user_registration_path %>
 			 	</div>
-			 	<div class="col-12 col-sm-3">
-			 		<b>Search</b>
-			 		<br />
-			 		Search bar here
-			 	</div>
 			 </div>
 			</div>
-	 	</div>
+		</div>
 	 </div>
   </body>
 </html>
