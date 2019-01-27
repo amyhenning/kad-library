@@ -2,16 +2,23 @@ class FavoriteResourcesController < ApplicationController
 	before_action :set_resource
 
 	def create
-		if Favorite.create(favorited: @resource, user: current_user)
-			redirect_to @resource, notice: 'Resource has been bookmarked'
-		else
-			redirect_to @resource, alert: 'Something went wrong. :('
+		@favorite_resource = Favorite.create(favorited: @resource, user: current_user)
+		if @favorite_resource.save
+			respond_to do |format|
+				format.html {redirect_to :back, notice: "Bookmarked!"}
+				format.js
+			end
 		end
 	end
 
 	def destroy
-		Favorite.where(favorited_id: @resource.id, user_id: current_user.id).first.destroy
-		redirect_to @resource, notice: 'Bookmark successfully removed'
+		@unfavorited_resource = Favorite.where(favorited_id: @resource.id, user_id: current_user.id).first
+		if @unfavorited_resource.destroy
+			respond_to do |format|
+				format.html {redirect_to :back, notice: "Bookmark removed."}
+				format.js
+			end
+		end
 	end
 
 	private
