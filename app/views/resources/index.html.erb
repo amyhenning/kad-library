@@ -30,13 +30,17 @@
 
           <% if current_user %>
             <% if current_user.favorite_resources.exists?(id: resource.id) %>
+              <span class="remove-bookmark" data_id="<%= %>">
                &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, remote: true, data: {confirm: 'Are you sure you want to remove this bookmark?'} do %>
-               <i class="fa fa-bookmark"></i>
-            <% end %>
+                <i class="fa fa-bookmark"></i>
+              </span>
+              <% end %>
             <% else %>
-               &nbsp; <%= link_to favorite_resources_path(resource_id: resource), method: :post do %>
+              <span class="add-bookmark">
+               &nbsp; <%= link_to favorite_resources_path(resource_id: resource), method: :post, remote: true do %>
                <i class="fa fa-bookmark-o"></i>
                <% end %>
+              </span>
             <% end %>
           <% else %>
              &nbsp; <small><%= link_to 'Log in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to bookmark this resource.</small>
