@@ -1,4 +1,6 @@
 console.log("deleting a bookmark");
+var resourceID = resource.id;
+// set variable for bookmark
 
-$(".add-bookmark").show();
-$(".remove-bookmark").hide();
+$("#add-bookmark-" + resourceID).toggle();
+$("#remove-bookmark-" + resourceID).toggle();

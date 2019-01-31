@@ -27,16 +27,15 @@
           <%= link_to resource_path(resource) do %>
             <i class="fa fa-info-circle" aria-hidden="true"></i>
           <% end %>
-
           <% if current_user %>
             <% if current_user.favorite_resources.exists?(id: resource.id) %>
-              <span class="remove-bookmark" data_id="<%= %>">
+              <span id="remove-bookmark-<%= resource.id %>">
                &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, remote: true, data: {confirm: 'Are you sure you want to remove this bookmark?'} do %>
                 <i class="fa fa-bookmark"></i>
               </span>
               <% end %>
             <% else %>
-              <span class="add-bookmark">
+              <span id="add-bookmark-<%= resource.id %>">
                &nbsp; <%= link_to favorite_resources_path(resource_id: resource), method: :post, remote: true do %>
                <i class="fa fa-bookmark-o"></i>
                <% end %>
