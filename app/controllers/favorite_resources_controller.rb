@@ -5,7 +5,7 @@ class FavoriteResourcesController < ApplicationController
 		@favorite_resource = Favorite.create(favorited: @resource, user: current_user)
 		if @favorite_resource.save
 			respond_to do |format|
-				format.html {redirect_to :back, notice: "Bookmarked!"}
+				# format.html {redirect_to :back, notice: "Bookmarked!"}
 				format.js
 			end
 		end
@@ -15,7 +15,7 @@ class FavoriteResourcesController < ApplicationController
 		@unfavorited_resource = Favorite.where(favorited_id: @resource.id, user_id: current_user.id).first
 		if @unfavorited_resource.destroy
 			respond_to do |format|
-				format.html {redirect_to :back, notice: "Bookmark removed."}
+				# format.html {redirect_to :back, notice: "Bookmark removed."}
 				format.js
 			end
 		end

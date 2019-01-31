@@ -30,7 +30,7 @@
 
           <% if current_user %>
             <% if current_user.favorite_resources.exists?(id: resource.id) %>
-               &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, data: {confirm: 'Are you sure you want to remove this bookmark?'} do %>
+               &nbsp; <%= link_to favorite_resource_path(resource), method: :delete, remote: true, data: {confirm: 'Are you sure you want to remove this bookmark?'} do %>
                <i class="fa fa-bookmark"></i>
             <% end %>
             <% else %>
