@@ -2,9 +2,6 @@ class ResourcesController < ApplicationController
 	 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		if current_user
-			@favorites = Favorite.where(user_id: current_user.id)
-		end
 		if params[:resource_category] == nil
 			@resource_category = nil
 		else
