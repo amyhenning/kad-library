@@ -23,10 +23,8 @@
         <br />
         <%= resource.description %>
         <br /><br />
-        <p class="float-right">            
-          <%= link_to resource_path(resource) do %>
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
-          <% end %>
+        <p class="float-right" id="resource-<%= resource.id %>">
+          <%= link_to 'More Info', resource_path(resource) %>&nbsp;|&nbsp;
 
           <% if current_user %>
             <%= link_to_toggle_favorite_resource(resource) %>

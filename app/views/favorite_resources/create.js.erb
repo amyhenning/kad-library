@@ -1,4 +1,3 @@
 console.log("creating a bookmark");
 
-$(".add-bookmark").hide();
-$(".remove-bookmar").show();
+$('#resource-<%= @resource.id %> .favorite').replaceWith("<%=j link_to_toggle_favorite_resource(@resource) %>");
