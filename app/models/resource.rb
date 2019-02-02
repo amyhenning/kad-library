@@ -11,4 +11,8 @@ class Resource < ApplicationRecord
     favorites = Favorite.where(favorited_type: "Resource", favorited_id: id)
     favorites.destroy_all
 	end
+
+	def favorited?(resource)
+		User.current.favorite_resources.exists?(id: resource.id)
+	end
 end
