@@ -15,6 +15,13 @@ class User < ApplicationRecord
 		end
 	end
 
+  def self.current
+    Thread.current[:user]
+  end
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
+
 	validates :username, presence: :true, uniqueness: { case_sensitive: false }
 	validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 	has_many :favorites
